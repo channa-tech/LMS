@@ -1,0 +1,13 @@
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="userform">
+        <label for="username">Username</label>
+        <input type="text" id="username" formControlName="username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" name="password" required>
+        
+        <button type="submit" (click)="login()">Login</button>
+    </form>
+</div>
