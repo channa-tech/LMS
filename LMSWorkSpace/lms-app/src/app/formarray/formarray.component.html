@@ -1,0 +1,26 @@
+<p>formarray works!</p>
+<form [formGroup]="empForm">
+    <div formArrayName="employees">
+        <div *ngFor="let emp of getEmployees().controls;let empindex=index">
+            <div [formGroupName]="empindex" style="border: 1px solid black; padding: 2px;margin: 5px;">
+                FirstName
+                <input type="text" formControlName="firstName">
+                LastName
+                <input type="text" formControlName="lastName">
+                <button (click)="AddSkill(empindex)">Add Skills</button> 
+                <div formArrayName="skills">
+                    <div *ngFor="let skill of getSkills(empindex).controls;let skillIndex=index">
+                        
+                        <div [formGroupName]="skillIndex">
+                            Language
+                            <input type="text" formControlName="language">
+                        </div> 
+                          <button (click)="RemoveSkill(empindex,skillIndex)">Remove Skill</button>
+                    </div>
+                </div>
+                <button (click)="RemoveEmp(empindex)">Remove</button>
+            </div>
+        </div>
+    </div>
+</form>
+<button (click)="AddEmp()">Add Employee</button>

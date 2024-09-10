@@ -1,0 +1,10 @@
+<mat-form-field appearance="fill">
+    <mat-label>ReferredDoctor</mat-label>
+    <input #doc type="text" (focus)="doctorFilter()" (input)="doctorFilter()"  placeholder="Pick one" aria-label="Number" matInput [formControl]="doctorFormControl"
+     [matAutocomplete]="doctorAuto">
+<mat-autocomplete [requireSelection]="true" #doctorAuto="matAutocomplete" [displayWith]="displayDoctor">
+   @for (d of filteredDoctor; track d.doctorId) {
+   <mat-option [value]="d">{{d.firstName+' '+d.lastName}}</mat-option>
+   }
+</mat-autocomplete>
+</mat-form-field>

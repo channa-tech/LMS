@@ -10,6 +10,7 @@ export class AuthGuard implements CanActivate{
     
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
+    
     if(this.authservice.isloggedIn)
       return true;
     else

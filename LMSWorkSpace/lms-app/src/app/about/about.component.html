@@ -1,1 +1,16 @@
-<p>about works!</p>
+<!-- <p>about works!</p>
+<form [formGroup]="fg" (ngSubmit)="Submit()">
+<div *ngFor="let field of fields">
+<label [for]="field.key">{{field.label}}</label>
+<input [type]="field.type" [formControlName]="field.key">
+<div *ngFor="let v of field.validations">
+<span *ngIf="fg.get(field.key)?.errors?.[v.key]">{{v.errorMessage}}</span>
+</div>
+</div>
+<button type="submit">Submit</button>
+</form>  -->
+<form [formGroup]="fg">
+    <label for="check">Check</label>
+<input id="check" name="check" type="checkbox" formControlName="ch">
+<span *ngIf="fg.get('ch')?.errors?.['required']">required</span>
+</form>

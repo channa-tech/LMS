@@ -21,7 +21,6 @@ export class DashboardComponent {
     this.menuOpen = !this.menuOpen;
   }
   Logout(){
-    //evt.preventDefault();
     this.authservice.isloggedIn=false;
     this.router.navigate(['login']);
   }

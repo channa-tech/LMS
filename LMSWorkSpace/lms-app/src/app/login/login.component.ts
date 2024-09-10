@@ -22,6 +22,8 @@ export class LoginComponent {
   userform!:FormGroup
   login(){
     this.authservice.authenticate(this.userform.value['username'],this.userform.value['password']);
-  this.route.navigate(['lms']);
+    if(this.authservice.isloggedIn)
+      this.route.navigate(['home']);
+      
   }
 }

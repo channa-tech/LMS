@@ -5,28 +5,29 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
+import { FormarrayComponent } from './formarray/formarray.component';
 
 export const routes: Routes = [
-{
-    path:'login',component:LoginComponent
-},
-{
-    path:'', component:LoginComponent,pathMatch:"full"
-},
-{
-    path:'lms',component:DashboardComponent,canActivate:[ AuthGuard],children:[
-        {
-            path:'home',component:HomeComponent
-        },
-        {
-            path:'about',component:AboutComponent
-        },
-        {
-            path:'admin',component:AdminComponent
-        },
-        {
-            path:'',redirectTo:'home',pathMatch:'full'
-        }
-    ]
-}
+    {
+        path: 'login', component: LoginComponent, pathMatch: 'full'
+    },
+
+    {
+        path: 'home',canActivate:[AuthGuard],  component: HomeComponent
+    },
+    {
+        path: 'about', canActivate:[AuthGuard], component: AboutComponent
+    },
+    {
+        path: 'admin',  component: AdminComponent
+    },
+    {
+        path:'formarray',component:FormarrayComponent
+    },
+    {
+        path: '', redirectTo: 'login', pathMatch: "full"
+    },
+    {
+        path: '**', redirectTo: 'login'
+    },
 ];

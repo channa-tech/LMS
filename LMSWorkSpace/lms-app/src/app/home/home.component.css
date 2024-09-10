@@ -1,0 +1,22 @@
+/* .form-container {
+    padding: 16px;
+    overflow-y: scroll;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-grid-list {
+    width: 100%;
+  } */
+  .gridContainer{
+    display: grid;
+    grid:auto / auto auto auto;
+    grid-gap: 10px;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  }
+  mat-form-field{
+    width: 100%;
+  }

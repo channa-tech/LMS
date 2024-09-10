@@ -1,0 +1,11 @@
+
+    <mat-form-field appearance="fill">
+        <mat-label>Reference Center</mat-label>
+        <input #centre type="text" (input)="filter()" (focus)="filter()"   placeholder="Pick one" aria-label="Number" matInput  [formControl]="selectedCenterctrl"
+         [matAutocomplete]="referenceCenterAuto">
+   <mat-autocomplete [requireSelection]="true"    #referenceCenterAuto="matAutocomplete" [displayWith]="displayCenter" >
+       @for (d of filteredCenter; track d.ReferenceCenterId) {
+       <mat-option  [value]="d">{{d.name+'('+d.code+')'}}</mat-option>
+       }
+   </mat-autocomplete>
+    </mat-form-field>
